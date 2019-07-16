@@ -1,0 +1,561 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		104A876A7F0FFEA21F0E4E45 /* Pods_Robot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B0CC739755609513B97E68 /* Pods_Robot.framework */; };
+		C100688322D7A34400AB844D /* ViewController+SceneNodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100688222D7A34400AB844D /* ViewController+SceneNodes.swift */; };
+		C100688522D7A82C00AB844D /* ViewController+Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100688422D7A82C00AB844D /* ViewController+Touch.swift */; };
+		C100688722D7A89C00AB844D /* ViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100688622D7A89C00AB844D /* ViewController+ARSCNViewDelegate.swift */; };
+		C100688922D7B51E00AB844D /* ViewController+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100688822D7B51E00AB844D /* ViewController+Gestures.swift */; };
+		C115744922C58DFF00E6E30D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C115744822C58DFF00E6E30D /* AppDelegate.swift */; };
+		C115744B22C58DFF00E6E30D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C115744A22C58DFF00E6E30D /* SceneDelegate.swift */; };
+		C115744D22C58DFF00E6E30D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C115744C22C58DFF00E6E30D /* ViewController.swift */; };
+		C115745022C58DFF00E6E30D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C115744E22C58DFF00E6E30D /* Main.storyboard */; };
+		C115745222C58E0100E6E30D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C115745122C58E0100E6E30D /* Assets.xcassets */; };
+		C115745522C58E0100E6E30D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C115745322C58E0100E6E30D /* LaunchScreen.storyboard */; };
+		C115745D22C58E1400E6E30D /* toy_robot_vintage.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C115745C22C58E1300E6E30D /* toy_robot_vintage.usdz */; };
+		C1434C1E22C93C0F000683D1 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C1434C1D22C93C0F000683D1 /* Models.scnassets */; };
+		C1CD217822DE21F300187AC1 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CD217722DE21F300187AC1 /* Utilities.swift */; };
+		C1CD217B22DE223300187AC1 /* ThresholdPanGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CD217A22DE223300187AC1 /* ThresholdPanGesture.swift */; };
+		C1CD217D22DE225D00187AC1 /* VirtualObjectARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CD217C22DE225D00187AC1 /* VirtualObjectARView.swift */; };
+		C1CD218022DE40F600187AC1 /* ViewController+FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CD217F22DE40F600187AC1 /* ViewController+FocusSquare.swift */; };
+		C1CD218222DE57B400187AC1 /* ViewController+VirtualObjectSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CD218122DE57B400187AC1 /* ViewController+VirtualObjectSelection.swift */; };
+		C1CD218622DE7A2400187AC1 /* ViewController+Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CD218522DE7A2400187AC1 /* ViewController+Camera.swift */; };
+		C1CD218A22DE7C9000187AC1 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CD218922DE7C9000187AC1 /* StatusViewController.swift */; };
+		C1D160E622DD51EC00C41431 /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D160E422DD51EC00C41431 /* VirtualObject.swift */; };
+		C1D160E722DD51EC00C41431 /* VirtualObjectLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D160E522DD51EC00C41431 /* VirtualObjectLoader.swift */; };
+		C1D160EC22DD534A00C41431 /* FocusSquareSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D160EA22DD534A00C41431 /* FocusSquareSegment.swift */; };
+		C1D160ED22DD534A00C41431 /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D160EB22DD534A00C41431 /* FocusSquare.swift */; };
+		C1D160EF22DD539D00C41431 /* ViewController+SceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D160EE22DD539D00C41431 /* ViewController+SceneView.swift */; };
+		C1D160F122DD53F400C41431 /* ViewController+CoachingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D160F022DD53F400C41431 /* ViewController+CoachingOverlay.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		71B0CC739755609513B97E68 /* Pods_Robot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Robot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B32E6E9EE840E23D991BFE51 /* Pods-Robot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Robot.release.xcconfig"; path = "Target Support Files/Pods-Robot/Pods-Robot.release.xcconfig"; sourceTree = "<group>"; };
+		C100688222D7A34400AB844D /* ViewController+SceneNodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+SceneNodes.swift"; sourceTree = "<group>"; };
+		C100688422D7A82C00AB844D /* ViewController+Touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Touch.swift"; sourceTree = "<group>"; };
+		C100688622D7A89C00AB844D /* ViewController+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
+		C100688822D7B51E00AB844D /* ViewController+Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Gestures.swift"; sourceTree = "<group>"; };
+		C115744522C58DFF00E6E30D /* Robot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Robot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C115744822C58DFF00E6E30D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C115744A22C58DFF00E6E30D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C115744C22C58DFF00E6E30D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C115744F22C58DFF00E6E30D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C115745122C58E0100E6E30D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C115745422C58E0100E6E30D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C115745622C58E0100E6E30D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C115745C22C58E1300E6E30D /* toy_robot_vintage.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_robot_vintage.usdz; sourceTree = "<group>"; };
+		C1434C1D22C93C0F000683D1 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
+		C1CD217722DE21F300187AC1 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		C1CD217A22DE223300187AC1 /* ThresholdPanGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdPanGesture.swift; sourceTree = "<group>"; };
+		C1CD217C22DE225D00187AC1 /* VirtualObjectARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectARView.swift; sourceTree = "<group>"; };
+		C1CD217F22DE40F600187AC1 /* ViewController+FocusSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+FocusSquare.swift"; sourceTree = "<group>"; };
+		C1CD218122DE57B400187AC1 /* ViewController+VirtualObjectSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+VirtualObjectSelection.swift"; sourceTree = "<group>"; };
+		C1CD218522DE7A2400187AC1 /* ViewController+Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Camera.swift"; sourceTree = "<group>"; };
+		C1CD218922DE7C9000187AC1 /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		C1D160E422DD51EC00C41431 /* VirtualObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
+		C1D160E522DD51EC00C41431 /* VirtualObjectLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectLoader.swift; sourceTree = "<group>"; };
+		C1D160EA22DD534A00C41431 /* FocusSquareSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquareSegment.swift; sourceTree = "<group>"; };
+		C1D160EB22DD534A00C41431 /* FocusSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
+		C1D160EE22DD539D00C41431 /* ViewController+SceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+SceneView.swift"; sourceTree = "<group>"; };
+		C1D160F022DD53F400C41431 /* ViewController+CoachingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CoachingOverlay.swift"; sourceTree = "<group>"; };
+		D8C1B19AC2BFC26350A4AF06 /* Pods-Robot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Robot.debug.xcconfig"; path = "Target Support Files/Pods-Robot/Pods-Robot.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C115744222C58DFF00E6E30D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				104A876A7F0FFEA21F0E4E45 /* Pods_Robot.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2D696A8A3452BC1A3875CEDC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D8C1B19AC2BFC26350A4AF06 /* Pods-Robot.debug.xcconfig */,
+				B32E6E9EE840E23D991BFE51 /* Pods-Robot.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6EF7B6796C37254F3159B63D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				71B0CC739755609513B97E68 /* Pods_Robot.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C115743C22C58DFF00E6E30D = {
+			isa = PBXGroup;
+			children = (
+				C1CD218822DE7C7700187AC1 /* StatusViewController */,
+				C1CD218722DE7B1300187AC1 /* Extensions */,
+				C1CD218422DE7A0E00187AC1 /* Camera */,
+				C1CD218322DE7A0600187AC1 /* SceneView */,
+				C1CD217E22DE3F6600187AC1 /* CoachingOverlay */,
+				C1CD217922DE222200187AC1 /* Gestures */,
+				C1CD217622DE21D900187AC1 /* Utilities */,
+				C1D160E922DD533B00C41431 /* Focus Square */,
+				C1D160E822DD51F500C41431 /* Virtual Object */,
+				C115744722C58DFF00E6E30D /* Robot */,
+				C115744622C58DFF00E6E30D /* Products */,
+				2D696A8A3452BC1A3875CEDC /* Pods */,
+				6EF7B6796C37254F3159B63D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C115744622C58DFF00E6E30D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C115744522C58DFF00E6E30D /* Robot.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C115744722C58DFF00E6E30D /* Robot */ = {
+			isa = PBXGroup;
+			children = (
+				C115745C22C58E1300E6E30D /* toy_robot_vintage.usdz */,
+				C115744822C58DFF00E6E30D /* AppDelegate.swift */,
+				C115744A22C58DFF00E6E30D /* SceneDelegate.swift */,
+				C115744C22C58DFF00E6E30D /* ViewController.swift */,
+				C115744E22C58DFF00E6E30D /* Main.storyboard */,
+				C115745122C58E0100E6E30D /* Assets.xcassets */,
+				C115745322C58E0100E6E30D /* LaunchScreen.storyboard */,
+				C115745622C58E0100E6E30D /* Info.plist */,
+				C1434C1D22C93C0F000683D1 /* Models.scnassets */,
+			);
+			path = Robot;
+			sourceTree = "<group>";
+		};
+		C1CD217622DE21D900187AC1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C1CD217722DE21F300187AC1 /* Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C1CD217922DE222200187AC1 /* Gestures */ = {
+			isa = PBXGroup;
+			children = (
+				C1CD217A22DE223300187AC1 /* ThresholdPanGesture.swift */,
+				C100688822D7B51E00AB844D /* ViewController+Gestures.swift */,
+			);
+			path = Gestures;
+			sourceTree = "<group>";
+		};
+		C1CD217E22DE3F6600187AC1 /* CoachingOverlay */ = {
+			isa = PBXGroup;
+			children = (
+				C1D160F022DD53F400C41431 /* ViewController+CoachingOverlay.swift */,
+			);
+			path = CoachingOverlay;
+			sourceTree = "<group>";
+		};
+		C1CD218322DE7A0600187AC1 /* SceneView */ = {
+			isa = PBXGroup;
+			children = (
+				C1D160EE22DD539D00C41431 /* ViewController+SceneView.swift */,
+			);
+			path = SceneView;
+			sourceTree = "<group>";
+		};
+		C1CD218422DE7A0E00187AC1 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				C1CD218522DE7A2400187AC1 /* ViewController+Camera.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		C1CD218722DE7B1300187AC1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C100688622D7A89C00AB844D /* ViewController+ARSCNViewDelegate.swift */,
+				C100688422D7A82C00AB844D /* ViewController+Touch.swift */,
+				C100688222D7A34400AB844D /* ViewController+SceneNodes.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C1CD218822DE7C7700187AC1 /* StatusViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C1CD218922DE7C9000187AC1 /* StatusViewController.swift */,
+			);
+			path = StatusViewController;
+			sourceTree = "<group>";
+		};
+		C1D160E822DD51F500C41431 /* Virtual Object */ = {
+			isa = PBXGroup;
+			children = (
+				C1D160E422DD51EC00C41431 /* VirtualObject.swift */,
+				C1D160E522DD51EC00C41431 /* VirtualObjectLoader.swift */,
+				C1CD217C22DE225D00187AC1 /* VirtualObjectARView.swift */,
+				C1CD218122DE57B400187AC1 /* ViewController+VirtualObjectSelection.swift */,
+			);
+			path = "Virtual Object";
+			sourceTree = "<group>";
+		};
+		C1D160E922DD533B00C41431 /* Focus Square */ = {
+			isa = PBXGroup;
+			children = (
+				C1D160EB22DD534A00C41431 /* FocusSquare.swift */,
+				C1D160EA22DD534A00C41431 /* FocusSquareSegment.swift */,
+				C1CD217F22DE40F600187AC1 /* ViewController+FocusSquare.swift */,
+			);
+			path = "Focus Square";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C115744422C58DFF00E6E30D /* Robot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C115745922C58E0100E6E30D /* Build configuration list for PBXNativeTarget "Robot" */;
+			buildPhases = (
+				E3EA6753B5B69FB3F453CD51 /* [CP] Check Pods Manifest.lock */,
+				C115744122C58DFF00E6E30D /* Sources */,
+				C115744222C58DFF00E6E30D /* Frameworks */,
+				C115744322C58DFF00E6E30D /* Resources */,
+				9570F3FA4A4D0BB07357A710 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Robot;
+			productName = Robot;
+			productReference = C115744522C58DFF00E6E30D /* Robot.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C115743D22C58DFF00E6E30D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "Fernando N. Frassia";
+				TargetAttributes = {
+					C115744422C58DFF00E6E30D = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = C115744022C58DFF00E6E30D /* Build configuration list for PBXProject "Robot" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C115743C22C58DFF00E6E30D;
+			productRefGroup = C115744622C58DFF00E6E30D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C115744422C58DFF00E6E30D /* Robot */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C115744322C58DFF00E6E30D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C115745D22C58E1400E6E30D /* toy_robot_vintage.usdz in Resources */,
+				C1434C1E22C93C0F000683D1 /* Models.scnassets in Resources */,
+				C115745522C58E0100E6E30D /* LaunchScreen.storyboard in Resources */,
+				C115745222C58E0100E6E30D /* Assets.xcassets in Resources */,
+				C115745022C58DFF00E6E30D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9570F3FA4A4D0BB07357A710 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Robot/Pods-Robot-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Robot/Pods-Robot-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Robot/Pods-Robot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3EA6753B5B69FB3F453CD51 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Robot-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C115744122C58DFF00E6E30D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1CD217D22DE225D00187AC1 /* VirtualObjectARView.swift in Sources */,
+				C1D160F122DD53F400C41431 /* ViewController+CoachingOverlay.swift in Sources */,
+				C100688722D7A89C00AB844D /* ViewController+ARSCNViewDelegate.swift in Sources */,
+				C1CD217822DE21F300187AC1 /* Utilities.swift in Sources */,
+				C1CD218A22DE7C9000187AC1 /* StatusViewController.swift in Sources */,
+				C115744D22C58DFF00E6E30D /* ViewController.swift in Sources */,
+				C115744922C58DFF00E6E30D /* AppDelegate.swift in Sources */,
+				C100688922D7B51E00AB844D /* ViewController+Gestures.swift in Sources */,
+				C1D160E622DD51EC00C41431 /* VirtualObject.swift in Sources */,
+				C1D160EC22DD534A00C41431 /* FocusSquareSegment.swift in Sources */,
+				C1CD217B22DE223300187AC1 /* ThresholdPanGesture.swift in Sources */,
+				C115744B22C58DFF00E6E30D /* SceneDelegate.swift in Sources */,
+				C100688522D7A82C00AB844D /* ViewController+Touch.swift in Sources */,
+				C1D160EF22DD539D00C41431 /* ViewController+SceneView.swift in Sources */,
+				C1CD218022DE40F600187AC1 /* ViewController+FocusSquare.swift in Sources */,
+				C1CD218222DE57B400187AC1 /* ViewController+VirtualObjectSelection.swift in Sources */,
+				C100688322D7A34400AB844D /* ViewController+SceneNodes.swift in Sources */,
+				C1CD218622DE7A2400187AC1 /* ViewController+Camera.swift in Sources */,
+				C1D160E722DD51EC00C41431 /* VirtualObjectLoader.swift in Sources */,
+				C1D160ED22DD534A00C41431 /* FocusSquare.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C115744E22C58DFF00E6E30D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C115744F22C58DFF00E6E30D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C115745322C58E0100E6E30D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C115745422C58E0100E6E30D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C115745722C58E0100E6E30D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C115745822C58E0100E6E30D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C115745A22C58E0100E6E30D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8C1B19AC2BFC26350A4AF06 /* Pods-Robot.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 426MNF8EA3;
+				INFOPLIST_FILE = Robot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.FerFrassia.Robot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C115745B22C58E0100E6E30D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B32E6E9EE840E23D991BFE51 /* Pods-Robot.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 426MNF8EA3;
+				INFOPLIST_FILE = Robot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.FerFrassia.Robot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C115744022C58DFF00E6E30D /* Build configuration list for PBXProject "Robot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C115745722C58E0100E6E30D /* Debug */,
+				C115745822C58E0100E6E30D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C115745922C58E0100E6E30D /* Build configuration list for PBXNativeTarget "Robot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C115745A22C58E0100E6E30D /* Debug */,
+				C115745B22C58E0100E6E30D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C115743D22C58DFF00E6E30D /* Project object */;
+}
