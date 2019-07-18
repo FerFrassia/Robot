@@ -12,6 +12,7 @@ extension ViewController {
     
     func setupSceneView() {
         sceneView.delegate = self
+        sceneView.scene = SCNScene(named: "backgroundScene.scn", inDirectory: "Models.scnassets")!
         sceneView.setupDirectionalLighting(queue: updateQueue)
     }
     

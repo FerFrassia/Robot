@@ -27,7 +27,7 @@ extension ViewController {
             let query = getRaycastQuery(),
             let result = sceneView.session.raycast(query).first {
 
-            DispatchQueue.main.async {
+            updateQueue.async {
                 self.sceneView.scene.rootNode.addChildNode(self.focusSquare)
                 self.focusSquare.state = .detecting(raycastResult: result, camera: camera)
             }
@@ -37,7 +37,7 @@ extension ViewController {
             }
 
         } else {
-            DispatchQueue.main.async {
+            updateQueue.async {
                 self.focusSquare.state = .initializing
                 self.sceneView.pointOfView?.addChildNode(self.focusSquare)
             }

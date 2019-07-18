@@ -34,6 +34,8 @@ extension ViewController: ARSCNViewDelegate {
         DispatchQueue.main.async {
             self.updateFocusSquare(isObjectVisible: isAnyObjectInView)
         }
+        
+        updateDirectionalLightIntensity()
     }
     
     func handleImage(node: SCNNode, _ imageAnchor: ARImageAnchor) {
@@ -50,6 +52,23 @@ extension ViewController: ARSCNViewDelegate {
             self.addRobotTo(node: node)
             self.activityIndicator.stopAnimating()
         }
+    }
+    
+    func updateDirectionalLightIntensity() {
+        if let lightEstimate = sceneView.session.currentFrame?.lightEstimate {
+            sceneView.updateDirectionalLighting(intensity: lightEstimate.ambientIntensity, queue: updateQueue)
+        } else {
+            sceneView.updateDirectionalLighting(intensity: 1000, queue: updateQueue)
+        }
+    }
+    
+    func restartExperience() {
+        resetTracking()
+    }
+    
+    func resetTracking() {
+        virtualObjectInteraction.selectedObject = nil
+        trackPlanes()
     }
     
 }

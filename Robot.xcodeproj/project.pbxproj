@@ -18,8 +18,8 @@
 		C115745022C58DFF00E6E30D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C115744E22C58DFF00E6E30D /* Main.storyboard */; };
 		C115745222C58E0100E6E30D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C115745122C58E0100E6E30D /* Assets.xcassets */; };
 		C115745522C58E0100E6E30D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C115745322C58E0100E6E30D /* LaunchScreen.storyboard */; };
-		C115745D22C58E1400E6E30D /* toy_robot_vintage.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C115745C22C58E1300E6E30D /* toy_robot_vintage.usdz */; };
 		C1434C1E22C93C0F000683D1 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C1434C1D22C93C0F000683D1 /* Models.scnassets */; };
+		C14961DB22DFB46D00A92591 /* VirtualObjectInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14961DA22DFB46D00A92591 /* VirtualObjectInteraction.swift */; };
 		C1CD217822DE21F300187AC1 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CD217722DE21F300187AC1 /* Utilities.swift */; };
 		C1CD217B22DE223300187AC1 /* ThresholdPanGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CD217A22DE223300187AC1 /* ThresholdPanGesture.swift */; };
 		C1CD217D22DE225D00187AC1 /* VirtualObjectARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CD217C22DE225D00187AC1 /* VirtualObjectARView.swift */; };
@@ -50,8 +50,8 @@
 		C115745122C58E0100E6E30D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C115745422C58E0100E6E30D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C115745622C58E0100E6E30D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C115745C22C58E1300E6E30D /* toy_robot_vintage.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_robot_vintage.usdz; sourceTree = "<group>"; };
 		C1434C1D22C93C0F000683D1 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
+		C14961DA22DFB46D00A92591 /* VirtualObjectInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectInteraction.swift; sourceTree = "<group>"; };
 		C1CD217722DE21F300187AC1 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		C1CD217A22DE223300187AC1 /* ThresholdPanGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdPanGesture.swift; sourceTree = "<group>"; };
 		C1CD217C22DE225D00187AC1 /* VirtualObjectARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectARView.swift; sourceTree = "<group>"; };
@@ -127,7 +127,6 @@
 		C115744722C58DFF00E6E30D /* Robot */ = {
 			isa = PBXGroup;
 			children = (
-				C115745C22C58E1300E6E30D /* toy_robot_vintage.usdz */,
 				C115744822C58DFF00E6E30D /* AppDelegate.swift */,
 				C115744A22C58DFF00E6E30D /* SceneDelegate.swift */,
 				C115744C22C58DFF00E6E30D /* ViewController.swift */,
@@ -151,6 +150,7 @@
 		C1CD217922DE222200187AC1 /* Gestures */ = {
 			isa = PBXGroup;
 			children = (
+				C14961DA22DFB46D00A92591 /* VirtualObjectInteraction.swift */,
 				C1CD217A22DE223300187AC1 /* ThresholdPanGesture.swift */,
 				C100688822D7B51E00AB844D /* ViewController+Gestures.swift */,
 			);
@@ -280,7 +280,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C115745D22C58E1400E6E30D /* toy_robot_vintage.usdz in Resources */,
 				C1434C1E22C93C0F000683D1 /* Models.scnassets in Resources */,
 				C115745522C58E0100E6E30D /* LaunchScreen.storyboard in Resources */,
 				C115745222C58E0100E6E30D /* Assets.xcassets in Resources */,
@@ -351,6 +350,7 @@
 				C115744B22C58DFF00E6E30D /* SceneDelegate.swift in Sources */,
 				C100688522D7A82C00AB844D /* ViewController+Touch.swift in Sources */,
 				C1D160EF22DD539D00C41431 /* ViewController+SceneView.swift in Sources */,
+				C14961DB22DFB46D00A92591 /* VirtualObjectInteraction.swift in Sources */,
 				C1CD218022DE40F600187AC1 /* ViewController+FocusSquare.swift in Sources */,
 				C1CD218222DE57B400187AC1 /* ViewController+VirtualObjectSelection.swift in Sources */,
 				C100688322D7A34400AB844D /* ViewController+SceneNodes.swift in Sources */,

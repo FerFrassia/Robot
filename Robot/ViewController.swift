@@ -27,6 +27,8 @@ class ViewController: UIViewController {
     var focusSquare = FocusSquare()
     let virtualObjectLoader = VirtualObjectLoader()
     
+    lazy var virtualObjectInteraction = VirtualObjectInteraction(sceneView: sceneView)
+    
     let updateQueue = DispatchQueue(label: "com.example.apple-samplecode.arkitexample.serialSceneKitQueue")
     
     var screenCenter: CGPoint {

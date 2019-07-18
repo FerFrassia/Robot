@@ -74,7 +74,7 @@ extension VirtualObject {
         return fileEnumerator.compactMap { element in
             let url = element as! URL
 
-            guard url.pathExtension == "scn" && !url.path.contains("backgroundScene") else { return nil }
+            guard url.pathExtension == "scn" && !url.path.contains("backgroundScene") && !url.path.contains("lighting") else { return nil }
 
             return VirtualObject(url: url)
         }

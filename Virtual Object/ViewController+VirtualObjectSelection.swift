@@ -60,21 +60,22 @@ extension ViewController {
         
         if virtualObject.shouldUpdateAnchor {
             virtualObject.shouldUpdateAnchor = false
-            DispatchQueue.main.async {
+            updateQueue.async {
                 self.sceneView.addOrUpdateAnchor(for: virtualObject)
+                self.virtualObjectInteraction.selectedObject = virtualObject
             }
         }
     }
     
     // MARK: Object Loading UI
     func displayObjectLoadingUI() {
-        addObjectButton.setImage(#imageLiteral(resourceName: "buttonring"), for: [])
+        addObjectButton.setImage(#imageLiteral(resourceName: "ButtonRing"), for: [])
         addObjectButton.isEnabled = false
     }
     
     func hideObjectLoadingUI() {
-        addObjectButton.setImage(#imageLiteral(resourceName: "add"), for: [])
-        addObjectButton.setImage(#imageLiteral(resourceName: "addPressed"), for: [.highlighted])
+        addObjectButton.setImage(#imageLiteral(resourceName: "Add"), for: [])
+        addObjectButton.setImage(#imageLiteral(resourceName: "AddPressed"), for: [.highlighted])
         addObjectButton.isEnabled = true
     }
 }

@@ -14,10 +14,9 @@ extension ViewController: ARCoachingOverlayViewDelegate {
     func setupCoachingOverlay() {
         coachingOverlay.session = sceneView.session
         coachingOverlay.delegate = self
+        setupCoachingOverlayConstraints()
         coachingOverlay.activatesAutomatically = true
         coachingOverlay.goal = .horizontalPlane
-        
-        setupCoachingOverlayConstraints()
     }
     
     func setupCoachingOverlayConstraints() {
@@ -34,6 +33,7 @@ extension ViewController: ARCoachingOverlayViewDelegate {
     
     /// - Tag: StartOver
     func coachingOverlayViewDidRequestSessionReset(_ coachingOverlayView: ARCoachingOverlayView) {
+        restartExperience()
     }
     
 }
