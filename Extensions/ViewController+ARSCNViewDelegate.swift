@@ -19,10 +19,6 @@ extension ViewController: ARSCNViewDelegate {
             handleImage(node: node, imageAnchor)
         }
         
-        if let planeAnchor = anchor as? ARPlaneAnchor {
-            handlePlane(node: node, planeAnchor)
-        }
-        
         return node
     }
     
@@ -41,6 +37,9 @@ extension ViewController: ARSCNViewDelegate {
     func handleImage(node: SCNNode, _ imageAnchor: ARImageAnchor) {
         DispatchQueue.main.async {
             self.activityIndicator.startAnimating()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.addRobotTo(node: node)
             self.activityIndicator.stopAnimating()
         }
@@ -63,6 +62,12 @@ extension ViewController: ARSCNViewDelegate {
     }
     
     func restartExperience() {
+        guard !virtualObjectLoader.isLoading else {return}
+        
+        virtualObjectLoader.removeAllVirtualObjects()
+        addObjectButton.setImage(#imageLiteral(resourceName: "Add"), for: [])
+        addObjectButton.setImage(#imageLiteral(resourceName: "AddPressed"), for: [.highlighted])
+        
         resetTracking()
     }
     

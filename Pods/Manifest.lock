@@ -1,18 +1,22 @@
 PODS:
+  - FFTopNotification (1.0.5)
   - NVActivityIndicatorView (4.7.0):
     - NVActivityIndicatorView/Presenter (= 4.7.0)
   - NVActivityIndicatorView/Presenter (4.7.0)
 
 DEPENDENCIES:
+  - FFTopNotification
   - NVActivityIndicatorView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - FFTopNotification
     - NVActivityIndicatorView
 
 SPEC CHECKSUMS:
+  FFTopNotification: 8a9dce3112ed567b15e3d15810422b8ae53ad3a6
   NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
 
-PODFILE CHECKSUM: 1af861bac71c8cf7af6ab797230489c0831d9ea4
+PODFILE CHECKSUM: ecca8b3ad4ceb9d6d0cb97a9819f1f189324c253
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.7.4

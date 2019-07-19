@@ -22,6 +22,9 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
     /// The scene view to hit test against when moving virtual content.
     let sceneView: VirtualObjectARView
     
+    /// A reference to the view controller.
+    let viewController: ViewController
+    
     /**
      The object that has been most recently intereacted with.
      The `selectedObject` can be moved at any time with the tap gesture.
@@ -39,8 +42,9 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
     /// The tracked screen position used to update the `trackedObject`'s position.
     private var currentTrackingPosition: CGPoint?
     
-    init(sceneView: VirtualObjectARView) {
+    init(sceneView: VirtualObjectARView, viewController: ViewController) {
         self.sceneView = sceneView
+        self.viewController = viewController
         super.init()
         
         createPanGestureRecognizer(sceneView)
@@ -156,8 +160,11 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
     // MARK: - Update object position
     /// - Tag: DragVirtualObject
     func translate(_ object: VirtualObject, basedOn screenPos: CGPoint) {
+        object.stopTrackedRaycast()
+        
+        // Update the object by using a one-time position request.
         if let query = sceneView.raycastQuery(from: screenPos, allowing: .estimatedPlane, alignment: object.allowedAlignment) {
-            object.raycast?.update(query)
+            viewController.createRaycastAndUpdate3DPosition(of: object, from: query)
         }
     }
 }

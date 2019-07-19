@@ -48,6 +48,13 @@ class VirtualObject: SCNReferenceNode {
     /// at the end of a pan gesture or when the object is repositioned
     var shouldUpdateAnchor = false
     
+    /// Stops tracking the object's position and orientation.
+    /// - Tag: StopTrackedRaycasts
+    func stopTrackedRaycast() {
+        raycast?.stopTracking()
+        raycast = nil
+    }
+    
     // MARK: - Helper methods to determine supported placement options
     
     func isPlacementValid(on planeAnchor: ARPlaneAnchor?) -> Bool {

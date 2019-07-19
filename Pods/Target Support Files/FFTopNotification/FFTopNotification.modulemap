@@ -1,0 +1,6 @@
+framework module FFTopNotification {
+  umbrella header "FFTopNotification-umbrella.h"
+
+  export *
+  module * { export * }
+}

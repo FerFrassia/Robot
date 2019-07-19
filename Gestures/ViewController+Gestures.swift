@@ -12,10 +12,7 @@ import SceneKit
 
 extension ViewController {
     func addGestures() {
-//        addPanGesture()
-//        addPinchGesture()
 //        addTapGesture()
-//        addThresholdPanGesture()
     }
     
 //MARK: - Panthreshold

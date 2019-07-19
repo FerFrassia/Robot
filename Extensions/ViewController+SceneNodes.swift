@@ -13,13 +13,9 @@ import ARKit
 extension ViewController {
     
     func addRobotTo(node: SCNNode) {
-//        guard let robotScene = SCNScene(named: "Models.scnassets/toy_robot_vintage.scn") else {return}
-//        let robotNode = robotScene.rootNode.childNodes.first!
-//        node.addChildNode(robotNode)
-//        robot = robotNode
-//        if virtualObjectLoader.loadedObjects.isEmpty {
-//
-//        }
+        guard let robotScene = SCNScene(named: "Models.scnassets/toy_robot_vintage.scn") else {return}
+        let robotNode = robotScene.rootNode.childNodes.first!
+        node.addChildNode(robotNode)
     }
     
 }

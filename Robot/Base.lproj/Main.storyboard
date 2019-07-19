@@ -11,21 +11,34 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Robot" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="VirtualObjectARView" customModule="Robot" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vdJ-VR-tIa" customClass="VirtualObjectARView" customModule="Robot" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ca-7u-ipF" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
-                                <rect key="frame" x="167" y="413" width="80" height="80"/>
+                                <rect key="frame" x="167" y="408" width="80" height="80"/>
                                 <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="5Ca-7u-ipF" secondAttribute="height" multiplier="1:1" id="kvN-Ea-Lx1"/>
                                     <constraint firstAttribute="height" constant="80" id="yLw-JY-VZ4"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="ballClipRotateMultiple"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" cocoaTouchSystemColor="systemTealColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwh-Ol-QFC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwh-Ol-QFC">
                                 <rect key="frame" x="20" y="812" width="161" height="30"/>
-                                <state key="normal" title="Status: Tracking Planes"/>
+                                <state key="normal" title="Tracking Images"/>
                                 <connections>
                                     <action selector="trackingBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PtT-NR-sXg"/>
                                 </connections>
@@ -49,20 +62,24 @@
                         </subviews>
                         <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="5Ca-7u-ipF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6Uw-hs-Wt6"/>
-                            <constraint firstItem="5Ca-7u-ipF" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Q7S-TX-ftf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vdJ-VR-tIa" secondAttribute="trailing" id="60H-eb-ucR"/>
+                            <constraint firstItem="5Ca-7u-ipF" firstAttribute="centerY" secondItem="vdJ-VR-tIa" secondAttribute="centerY" id="R1q-72-cZT"/>
+                            <constraint firstItem="vdJ-VR-tIa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VDW-yE-Y8C"/>
                             <constraint firstItem="omn-VB-5xh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VVj-ds-Coj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rwh-Ol-QFC" secondAttribute="bottom" constant="20" id="WxN-Lo-JIH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="omn-VB-5xh" secondAttribute="bottom" constant="20" id="Xbj-eF-tHZ"/>
                             <constraint firstItem="rwh-Ol-QFC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="a5a-8b-EPW"/>
                             <constraint firstItem="omn-VB-5xh" firstAttribute="leading" secondItem="rwh-Ol-QFC" secondAttribute="trailing" constant="1" id="bZc-Tc-NNZ"/>
+                            <constraint firstAttribute="bottom" secondItem="vdJ-VR-tIa" secondAttribute="bottom" id="gP0-V3-AN4"/>
+                            <constraint firstItem="5Ca-7u-ipF" firstAttribute="centerX" secondItem="vdJ-VR-tIa" secondAttribute="centerX" id="mRb-Ae-aq2"/>
+                            <constraint firstItem="vdJ-VR-tIa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pm6-ev-W9V"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="5Ca-7u-ipF" id="nvL-0i-U5L"/>
                         <outlet property="addObjectButton" destination="omn-VB-5xh" id="D0k-ht-def"/>
-                        <outlet property="sceneView" destination="8bC-Xf-vdC" id="Ya5-kD-fmO"/>
+                        <outlet property="sceneView" destination="vdJ-VR-tIa" id="Wtj-l2-fsP"/>
                         <outlet property="trackingBtn" destination="rwh-Ol-QFC" id="9pa-en-9pR"/>
                     </connections>
                 </viewController>

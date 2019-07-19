@@ -15,7 +15,7 @@ extension ViewController: ARCoachingOverlayViewDelegate {
         coachingOverlay.session = sceneView.session
         coachingOverlay.delegate = self
         setupCoachingOverlayConstraints()
-        coachingOverlay.activatesAutomatically = true
+        coachingOverlay.activatesAutomatically = false
         coachingOverlay.goal = .horizontalPlane
     }
     

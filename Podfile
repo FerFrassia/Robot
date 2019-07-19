@@ -7,4 +7,5 @@ target 'Robot' do
 
   # Pods for Robot
   pod 'NVActivityIndicatorView'
+  pod 'FFTopNotification'
 end

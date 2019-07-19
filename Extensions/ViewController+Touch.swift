@@ -10,17 +10,35 @@ import UIKit
 import SceneKit
 import ARKit
 
+enum ConfigurationType {
+    case trackingImages
+    case trackingPlanes
+}
 
-extension ViewController {    
+extension ViewController {
+    
     func changeTracking() {
+        configurationIsTrackingImages = !configurationIsTrackingImages
         if configurationIsTrackingImages {
+            startTracking(type: .trackingImages)
+        } else {
+            startTracking(type: .trackingPlanes)
+        }
+    }
+    
+    func startTracking(type: ConfigurationType) {
+        if type == .trackingPlanes {
             trackPlanes()
-            trackingBtn.setTitle("Status: Plane Tracking", for: .normal)
         } else {
             trackImages()
-            trackingBtn.setTitle("Status: Image Tracking", for: .normal)
         }
-        configurationIsTrackingImages = !configurationIsTrackingImages
+        
+        let trackingBtnTitle = type == .trackingImages ? "Image Tracking" : "Plane Tracking"
+        trackingBtn.setTitle(trackingBtnTitle, for: .normal)
+        addObjectButton.isHidden = type == .trackingImages
+        coachingOverlay.setActive(type == .trackingPlanes, animated: false)
+        coachingOverlay.activatesAutomatically = type == .trackingPlanes
+        focusSquare.isHidden = type == .trackingImages
     }
     
     func trackPlanes() {

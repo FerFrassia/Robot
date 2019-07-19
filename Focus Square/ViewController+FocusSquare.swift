@@ -12,6 +12,8 @@ import ARKit
 extension ViewController {
     
     func updateFocusSquare(isObjectVisible: Bool) {
+        guard !configurationIsTrackingImages else {return}
+        
         if isObjectVisible || coachingOverlay.isActive {
             focusSquare.hide()
         } else {

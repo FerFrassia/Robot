@@ -9,6 +9,7 @@
 import Foundation
 import SceneKit
 import ARKit
+import FFTopNotification
 
 extension ViewController {
     
@@ -16,6 +17,8 @@ extension ViewController {
         guard !addObjectButton.isHidden && !virtualObjectLoader.isLoading else {return}
         
         guard let robotObject = VirtualObject.availableObjects.first else {return}
+        activityIndicator.startAnimating()
+        
         virtualObjectLoader.loadVirtualObject(robotObject) { (loadedObject) in
             do {
                 let scene = try SCNScene(url: robotObject.referenceURL, options: nil)
@@ -24,6 +27,8 @@ extension ViewController {
                         self.hideObjectLoadingUI()
                         self.placeVirtualObject(loadedObject)
                         loadedObject.isHidden = false
+                        self.activityIndicator.stopAnimating()
+                        self.addObjectButton.isHidden = true
                     }
                 })
             } catch {
@@ -47,7 +52,8 @@ extension ViewController {
     
     func setVirtualObject3DPosition(_ results: [ARRaycastResult], with virtualObject: VirtualObject) {
         guard let result = results.first else {
-            fatalError("Unexpected case: the update handler is always supposed to return at least one result.")
+            view.displayNotification(text: "Object out of plane", type: .failure)
+            return
         }
         
         virtualObject.simdWorldTransform = result.worldTransform
@@ -66,6 +72,30 @@ extension ViewController {
             }
         }
     }
+    
+    func createRaycastAndUpdate3DPosition(of virtualObject: VirtualObject, from query: ARRaycastQuery) {
+        guard let result = sceneView.session.raycast(query).first else {
+            return
+        }
+        
+        if virtualObject.allowedAlignment == .any && self.virtualObjectInteraction.trackedObject == virtualObject {
+            
+            // If an object that's aligned to a surface is being dragged, then
+            // smoothen its orientation to avoid visible jumps, and apply only the translation directly.
+            virtualObject.simdWorldPosition = result.worldTransform.translation
+            
+            let previousOrientation = virtualObject.simdWorldTransform.orientation
+            let currentOrientation = result.worldTransform.orientation
+            virtualObject.simdWorldOrientation = simd_slerp(previousOrientation, currentOrientation, 0.1)
+        } else {
+            self.setTransform(of: virtualObject, with: result)
+        }
+    }
+    
+    func setTransform(of virtualObject: VirtualObject, with result: ARRaycastResult) {
+        virtualObject.simdWorldTransform = result.worldTransform
+    }
+
     
     // MARK: Object Loading UI
     func displayObjectLoadingUI() {

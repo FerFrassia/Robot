@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var trackingBtn: UIButton!
     
     var robot: VirtualObject?
-    var configurationIsTrackingImages = false
+    var configurationIsTrackingImages = true
     var currentAngleY: Float = 0
     
     //MARK: - ARKit Variables
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     var focusSquare = FocusSquare()
     let virtualObjectLoader = VirtualObjectLoader()
     
-    lazy var virtualObjectInteraction = VirtualObjectInteraction(sceneView: sceneView)
+    lazy var virtualObjectInteraction = VirtualObjectInteraction(sceneView: sceneView, viewController: self)
     
     let updateQueue = DispatchQueue(label: "com.example.apple-samplecode.arkitexample.serialSceneKitQueue")
     
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        trackPlanes()
+        startTracking(type: .trackingImages)
     }
     
     @IBAction func trackingBtnPressed(_ sender: Any) {
