@@ -38,6 +38,9 @@ class VirtualObject: SCNReferenceNode {
         }
     }
     
+    /// Last known scale, after pinch gesture
+    var lastKnownScale: SCNVector3?
+    
     /// The object's corresponding ARAnchor
     var anchor: ARAnchor?
     

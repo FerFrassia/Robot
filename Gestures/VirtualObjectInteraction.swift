@@ -47,24 +47,37 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
         self.viewController = viewController
         super.init()
         
-        createPanGestureRecognizer(sceneView)
-        
-        let rotationGesture = UIRotationGestureRecognizer(target: self, action: #selector(didRotate(_:)))
-        rotationGesture.delegate = self
-        sceneView.addGestureRecognizer(rotationGesture)
-
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(_:)))
-        sceneView.addGestureRecognizer(tapGesture)
+        createPanGesture(sceneView)
+        createPinchGesture(sceneView)
+        createRotationGesture(sceneView)
+        createTapGesture(sceneView)
     }
     
-    // - Tag: CreatePanGesture
-    func createPanGestureRecognizer(_ sceneView: VirtualObjectARView) {
+    // MARK: - Gesture Actions
+    func createPanGesture(_ sceneView: VirtualObjectARView) {
         let panGesture = ThresholdPanGesture(target: self, action: #selector(didPan(_:)))
+        panGesture.minimumNumberOfTouches = 1
+        panGesture.maximumNumberOfTouches = 1
         panGesture.delegate = self
         sceneView.addGestureRecognizer(panGesture)
     }
     
-    // MARK: - Gesture Actions
+    func createPinchGesture(_ sceneView: VirtualObjectARView) {
+        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(didPinch(_:)))
+        sceneView.addGestureRecognizer(pinchGesture)
+    }
+    
+    func createRotationGesture(_ sceneView: VirtualObjectARView) {
+        let rotationGesture = UIRotationGestureRecognizer(target: self, action: #selector(didRotate(_:)))
+        rotationGesture.delegate = self
+        sceneView.addGestureRecognizer(rotationGesture)
+    }
+    
+    func createTapGesture(_ sceneView: VirtualObjectARView) {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(_:)))
+        sceneView.addGestureRecognizer(tapGesture)
+    }
+    
     
     @objc
     func didPan(_ gesture: ThresholdPanGesture) {
@@ -100,6 +113,34 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
             // Clear the current position tracking.
             currentTrackingPosition = nil
             trackedObject = nil
+        }
+    }
+    
+    @objc
+    func didPinch(_ gesture: UIPinchGestureRecognizer) {
+        guard selectedObject != nil else {return}
+        
+        switch gesture.state {
+        case .began:
+            gesture.scale = CGFloat(selectedObject!.scale.x)
+        case .changed:
+            let defaultScale = 1
+            let minScale = defaultScale/2
+            let maxScale = defaultScale*4
+            let gestureScaleMult = gesture.scale
+            
+            var newVector: SCNVector3
+            if gestureScaleMult < CGFloat(minScale) {
+                newVector = SCNVector3(x: Float(minScale), y: Float(minScale), z: Float(minScale))
+            } else if gestureScaleMult > CGFloat(maxScale) {
+                newVector = SCNVector3(x: Float(maxScale), y: Float(maxScale), z: Float(maxScale))
+            } else {
+                newVector = SCNVector3(x: Float(gestureScaleMult), y: Float(gestureScaleMult), z: Float(gestureScaleMult))
+            }
+            selectedObject?.scale = newVector
+            selectedObject?.lastKnownScale = newVector
+        default:
+            return
         }
     }
 

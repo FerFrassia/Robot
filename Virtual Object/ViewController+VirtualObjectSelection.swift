@@ -29,6 +29,7 @@ extension ViewController {
                         loadedObject.isHidden = false
                         self.activityIndicator.stopAnimating()
                         self.addObjectButton.isHidden = true
+                        self.robot = loadedObject
                     }
                 })
             } catch {
@@ -94,6 +95,9 @@ extension ViewController {
     
     func setTransform(of virtualObject: VirtualObject, with result: ARRaycastResult) {
         virtualObject.simdWorldTransform = result.worldTransform
+        if virtualObject.lastKnownScale != nil {
+            virtualObject.scale = virtualObject.lastKnownScale!
+        }
     }
 
     
